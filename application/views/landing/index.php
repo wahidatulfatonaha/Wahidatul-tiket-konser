@@ -19,8 +19,8 @@
         <div><span><?= htmlspecialchars($e->kategori) ?></span></div>
         <div>
           <h4><?= htmlspecialchars($e->nama) ?></h4>
-          <div>📅 <?= date('d M Y, H:i', strtotime($e->tanggal)) ?></div>
-          <div>📍 <?= htmlspecialchars($e->lokasi) ?></div>
+          <div>TANGGAL = <?= date('d M Y, H:i', strtotime($e->tanggal)) ?></div>
+          <div>LOKASI = <?= htmlspecialchars($e->lokasi) ?></div>
           <div>
             <div>
               <small>Mulai dari</small>

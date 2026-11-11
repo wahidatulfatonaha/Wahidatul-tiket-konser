@@ -7,7 +7,7 @@
         <span>Event</span>
       </div>
       <h1><?= htmlspecialchars($event->nama) ?></h1>
-      <p>📅 <?= date('d M Y, H:i', strtotime($event->tanggal)) ?> &nbsp;|&nbsp; 📍 <?= htmlspecialchars($event->lokasi) ?></p>
+      <p>TANGGAL = <?= date('d M Y, H:i', strtotime($event->tanggal)) ?> &nbsp;|&nbsp; LOKASI = <?= htmlspecialchars($event->lokasi) ?></p>
       <?php if ($selesai): ?>
         <div>Event ini sudah selesai. Pemesanan ditutup.</div>
       <?php endif; ?>

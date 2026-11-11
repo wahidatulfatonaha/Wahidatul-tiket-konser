@@ -5,7 +5,7 @@
     <div>
       <div>
         <h5><?= htmlspecialchars($tiket->event_nama) ?></h5>
-        <p>📅 <?= date('d M Y, H:i', strtotime($tiket->tanggal)) ?><br>📍 <?= htmlspecialchars($tiket->lokasi) ?></p>
+        <p>LOKASI <?= date('d M Y, H:i', strtotime($tiket->tanggal)) ?><br>📍 <?= htmlspecialchars($tiket->lokasi) ?></p>
         <hr>
         <div><span>Tiket <?= htmlspecialchars($tiket->nama) ?></span><span><?= rupiah($tiket->harga) ?></span></div>
         <div><span>Sisa kuota</span><span><?= (int)$tiket->sisa ?></span></div>
