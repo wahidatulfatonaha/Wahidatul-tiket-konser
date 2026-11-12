@@ -17,7 +17,6 @@ class Admin extends CI_Controller {
         $this->load->view('admin/' . $view, $data);
         $this->load->view('layout/admin_footer');
     }
-
     public function index()
     {
         $this->page('dashboard', array(
@@ -139,7 +138,6 @@ class Admin extends CI_Controller {
             'tiket' => $tiket,
         ));
     }
-
     public function tiket_hapus($id)
     {
         $this->Tiket_model->hapus($id);
@@ -160,7 +158,6 @@ class Admin extends CI_Controller {
             'st'      => $st,
         ));
     }
-
     public function verifikasi($id)
     {
         if ($this->Pesanan_model->verifikasi($id)) {
@@ -170,7 +167,6 @@ class Admin extends CI_Controller {
         }
         redirect('admin/transaksi');
     }
-
     public function batalkan($id)
     {
         if ($this->Pesanan_model->batalkan($id)) {

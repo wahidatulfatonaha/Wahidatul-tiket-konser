@@ -26,12 +26,10 @@ class Event_model extends CI_Model {
         $sql .= " ORDER BY e.tanggal DESC";
         return $this->db->query($sql, $bind)->result();
     }
-
     public function get($id)
     {
         return $this->db->get_where('events', array('id' => (int)$id))->row();
     }
-
     public function simpan($data, $id = NULL)
     {
         if ($id) {
@@ -40,12 +38,10 @@ class Event_model extends CI_Model {
             $this->db->insert('events', $data);
         }
     }
-
     public function hapus($id)
     {
         $this->db->where('id', $id)->delete('events');
     }
-
     public function kategori()
     {
         return $this->db->order_by('nama')->get('kategori')->result();

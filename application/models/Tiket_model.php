@@ -9,12 +9,10 @@ class Tiket_model extends CI_Model {
             array((int)$event_id)
         )->result();
     }
-
     public function get($id)
     {
         return $this->db->get_where('jenis_tiket', array('id' => (int)$id))->row();
     }
-
     public function simpan($data, $id = NULL)
     {
         if ($id) {
@@ -23,12 +21,10 @@ class Tiket_model extends CI_Model {
             $this->db->insert('jenis_tiket', $data);
         }
     }
-
     public function hapus($id)
     {
         $this->db->where('id', $id)->delete('jenis_tiket');
     }
-
     public function get_lengkap($id)
     {
         return $this->db->query(

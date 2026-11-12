@@ -62,7 +62,6 @@ class Pesanan_model extends CI_Model {
         $this->db->trans_commit();
         return array(TRUE, 'Pesanan berhasil dibuat.', $kode);
     }
-
     public function milik($user_id)
     {
         return $this->db->query(
@@ -73,7 +72,6 @@ class Pesanan_model extends CI_Model {
              WHERE p.user_id = ? ORDER BY p.created_at DESC", array((int)$user_id)
         )->result();
     }
-
     public function by_kode($kode, $user_id)
     {
         return $this->db->get_where('pemesanan', array(
@@ -81,7 +79,6 @@ class Pesanan_model extends CI_Model {
             'user_id' => (int)$user_id,
         ))->row();
     }
-
     public function simpan_bukti($id, $file)
     {
         $this->db->where('id', (int)$id)->update('pemesanan', array(
@@ -89,7 +86,6 @@ class Pesanan_model extends CI_Model {
             'status'      => 'Menunggu Verifikasi',
         ));
     }
-
     public function cari($q = '', $status = '')
     {
         $sql = "SELECT p.*, t.nama AS tiket, t.harga, e.nama AS event
@@ -109,7 +105,6 @@ class Pesanan_model extends CI_Model {
         $sql .= " ORDER BY p.created_at DESC";
         return $this->db->query($sql, $bind)->result();
     }
-
     public function verifikasi($id)
     {
         $this->db->where('id', (int)$id)
@@ -117,7 +112,6 @@ class Pesanan_model extends CI_Model {
                  ->update('pemesanan', array('status' => 'Berhasil'));
         return $this->db->affected_rows() > 0;
     }
-
     public function batalkan($id)
     {
         $this->db->trans_begin();
@@ -135,7 +129,6 @@ class Pesanan_model extends CI_Model {
         $this->db->trans_commit();
         return TRUE;
     }
-
     public function kadaluarsa()
     {
         $rows = $this->db->query(
@@ -155,7 +148,6 @@ class Pesanan_model extends CI_Model {
             (SELECT COALESCE(SUM(total), 0) FROM pemesanan WHERE status = 'Berhasil') AS pendapatan
         ")->row();
     }
-
     public function rekap()
     {
         return $this->db->query("SELECT e.nama AS event, e.tanggal, t.nama AS tiket, t.harga,

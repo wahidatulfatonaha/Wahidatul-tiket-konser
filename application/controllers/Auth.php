@@ -7,7 +7,6 @@ class Auth extends CI_Controller {
         parent::__construct();
         $this->load->model('User_model');
     }
-
     public function login()
     {
         if ($u = user_login()) {
@@ -40,7 +39,6 @@ class Auth extends CI_Controller {
         $this->load->view('auth/login');
         $this->load->view('layout/footer');
     }
-
     public function register()
     {
         if (user_login()) redirect('pelanggan');
@@ -68,7 +66,6 @@ class Auth extends CI_Controller {
         $this->load->view('auth/register');
         $this->load->view('layout/footer');
     }
-
     public function logout()
     {
         $this->session->unset_userdata('user');

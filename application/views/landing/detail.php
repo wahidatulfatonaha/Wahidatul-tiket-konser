@@ -1,5 +1,5 @@
 <div>
-  <a href="<?= base_url('#tiket') ?>">&larr; Kembali</a>
+  <a href="<?= base_url('index') ?>">&larr; Kembali</a>
   <div>
 
     <div>

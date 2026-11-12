@@ -6,8 +6,6 @@ function user_login()
     $CI =& get_instance();
     return $CI->session->userdata('user');
 }
-
-
 function need_role($role)
 {
     $u = user_login();
@@ -17,12 +15,10 @@ function need_role($role)
         redirect('login');
     }
 }
-
 function rupiah($n)
 {
     return 'Rp ' . number_format((float)$n, 0, ',', '.');
 }
-
 function badge_status($s)
 {
     $warna = array(
@@ -34,7 +30,6 @@ function badge_status($s)
     $c = isset($warna[$s]) ? $warna[$s] : 'secondary';
     return '<span class="badge bg-' . $c . '">' . htmlspecialchars($s) . '</span>';
 }
-
 function info_bayar()
 {
     return array(

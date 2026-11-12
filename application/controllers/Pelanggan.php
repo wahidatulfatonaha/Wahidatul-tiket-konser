@@ -10,7 +10,6 @@ class Pelanggan extends CI_Controller {
         $this->load->model('Tiket_model');
         $this->load->model('Pesanan_model');
     }
-
     public function index()
     {
         $data['title']  = 'Dashboard';
@@ -20,7 +19,6 @@ class Pelanggan extends CI_Controller {
         $this->load->view('pelanggan/dashboard', $data);
         $this->load->view('layout/footer');
     }
-
     public function pesanan()
     {
         $u = user_login();
@@ -31,7 +29,6 @@ class Pelanggan extends CI_Controller {
         $this->load->view('pelanggan/pesanan', $data);
         $this->load->view('layout/footer');
     }
-
     public function pesan($tiket_id)
     {
         $u     = user_login();
@@ -93,7 +90,6 @@ class Pelanggan extends CI_Controller {
         $this->load->view('pelanggan/pesan', $data);
         $this->load->view('layout/footer');
     }
-
     public function upload_bukti($kode)
     {
         $u = user_login();

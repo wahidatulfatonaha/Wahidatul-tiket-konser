@@ -6,7 +6,6 @@ class User_model extends CI_Model {
     {
         return $this->db->get_where('users', array('email' => $email))->row();
     }
-
     public function daftar($data)
     {
         $data['password'] = password_hash($data['password'], PASSWORD_DEFAULT);
