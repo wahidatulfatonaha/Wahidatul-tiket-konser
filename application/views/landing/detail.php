@@ -1,5 +1,5 @@
 <div>
-  <a href="<?= base_url('index') ?>">&larr; Kembali</a>
+  <a href="<?= base_url('landing') ?>">&larr; Kembali</a>
   <div>
 
     <div>

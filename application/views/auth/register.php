@@ -17,9 +17,21 @@
 </head>
 <body>
 
+    <div class="login-wrapper">
+        <div class="login-bg-shape login-bg-shape-1"></div>
+        <div class="login-bg-shape login-bg-shape-2"></div>
+        
+        <div class="login-card">
+            
+            <a href="index.html" class="login-brand text-decoration-none">
+                <i class="bi bi-asterisk"></i>
+                <span>Tiket Konser</span>
+            </a>
+            
+            <p class="login-subtitle">Daftar agar punya Akun</p>
+
 <div>
   <div>
-    <h2>Daftar Pelanggan</h2>
     <?= form_open('register') ?>
       <?php
       $field = array(
@@ -37,7 +49,11 @@
         <?= form_error($nama, '<div>', '</div>') ?>
       </div>
       <?php endforeach; ?>
-      <button type="submit">Daftar</button>
+      <br>
+      <button type="submit" class="btn-login" id="btn-submit">
+          <span>Daftar</span>
+          <i class="bi bi-arrow-right"></i>
+      </button>
     <?= form_close() ?>
     <p>Sudah punya akun? <a href="<?= base_url('login') ?>">Masuk</a></p>
   </div>

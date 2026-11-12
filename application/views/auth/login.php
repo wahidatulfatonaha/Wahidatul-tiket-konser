@@ -17,22 +17,48 @@
 </head>
 <body>
 
-<div>
-    <h2>Masuk</h2>
+  <div class="login-wrapper">
+        <div class="login-bg-shape login-bg-shape-1"></div>
+        <div class="login-bg-shape login-bg-shape-2"></div>
+        
+        <div class="login-card">
+            
+            <a href="index.html" class="login-brand text-decoration-none">
+                <i class="bi bi-asterisk"></i>
+                <span>Tiket Konser</span>
+            </a>
+            
+            <p class="login-subtitle">Masuk untuk mengakses Dashboard</p>
+
+      <div>
     <?= form_open('login') ?>
-      <div>
-        <label>Email</label>
-        <input type="email" name="email" value="<?= set_value('email') ?>">
-        <?= form_error('email', '<div>', '</div>') ?>
+      <div class="login-form-group">
+          <label for="email" class="login-form-label">Email Address</label>
+          <div class="login-input-group">
+              <i class="bi bi-envelope input-icon"></i>
+              <input type="email" id="email" name="email" class="login-input" value="<?= set_value('email') ?>">
+              <?= form_error('email', '<div>', '</div>') ?>
+          </div>
       </div>
-      <div>
-        <label>Password</label>
-        <input type="password" name="password">
-        <?= form_error('password', '<div>', '</div>') ?>
+      <div class="login-form-group">
+          <label for="password" class="login-form-label">Password</label>
+          <div class="login-input-group">
+              <i class="bi bi-shield-lock input-icon"></i>
+              <input type="password" id="password" name="password" class="login-input">
+              <?= form_error('password', '<div>', '</div>') ?>
+              <button type="button" class="password-toggle-btn" id="toggle-password" aria-label="Show password">
+                  <i class="bi bi-eye"></i>
+              </button>
+          </div>
       </div>
-      <button type="submit">Masuk</button>
+      <button type="submit" class="btn-login" id="btn-submit">
+          <span>Masuk</span>
+          <i class="bi bi-arrow-right"></i>
+      </button>
     <?= form_close() ?>
-    <p>Belum punya akun? <a href="<?= base_url('register') ?>">Daftar</a></p>
+    <p class="login-footer-text">
+        Belum punya akun? <a href="<?= base_url('register') ?>">Daftar</a>
+    </p>
   </div>
 </div>
 
